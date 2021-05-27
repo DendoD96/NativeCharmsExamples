@@ -99,10 +99,10 @@ options:
     description: |
       This is a string config param
     default: ""
-  enb-name:
+  config-param-2:
     type: int
     description: |
-      This is a string config param
+      This is an int config param
     default: 1
 ```
 If no configuration parameters are required insert `options: {}`
