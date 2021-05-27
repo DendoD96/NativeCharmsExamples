@@ -1,0 +1,2 @@
+29c2c958d8f74626ba192101237eb76e	simple_native_charm_ns/simple_native_charm_nsd.yaml
+bc681c5a4c3cdc09c013df2d2239f3d2	simple_native_charm_ns/icons/osm.png
