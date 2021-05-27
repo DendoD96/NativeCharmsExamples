@@ -1,0 +1,2 @@
+# Basic
+The NS is composed by a single VNF composed by a single VDU. A native charm is defined for the last one. The charm has a single day1/day2 action `writetofile`: given a **filename** and a **text** write this to the file.
