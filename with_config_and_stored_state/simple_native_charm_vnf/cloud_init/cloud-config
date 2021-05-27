@@ -1,0 +1,18 @@
+#cloud-config
+manage_etc_hosts: true
+password: ubuntu
+chpasswd: { expire: False }
+ssh_pwauth: True
+network:
+  version: 2
+  ethernets:
+    ens3:
+      dhcp4: true
+      set-name: ens3
+    ens4:
+      dhcp4: true
+      set-name: ens4
+
+# packages:
+#   - python3-loguru
+#   - python3-yaml

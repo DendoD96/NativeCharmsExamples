@@ -1,0 +1,5 @@
+options:
+  filepath:
+    default: '/home/ubuntu/conter.txt'
+    description: The path of file to write
+    type: string
