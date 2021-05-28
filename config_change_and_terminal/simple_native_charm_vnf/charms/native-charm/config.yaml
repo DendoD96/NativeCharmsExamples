@@ -1,0 +1,5 @@
+options:
+  service_params:
+    default: 'fake param'
+    description: Some parameters to pass to the service
+    type: string
