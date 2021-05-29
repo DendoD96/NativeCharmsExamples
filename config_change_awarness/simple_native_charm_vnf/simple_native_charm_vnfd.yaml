@@ -1,0 +1,73 @@
+vnfd:
+  description: A VNF consisting on a single VDU
+  df:
+    - id: default-df
+      instantiation-level:
+        - id: default-instantiation-level
+          vdu-level:
+            - number-of-instances: 1
+              vdu-id: default_vdu
+      vdu-profile:
+        - id: default_vdu
+          min-number-of-instances: 1
+      lcm-operations-configuration:
+        operate-vnf-op-config:
+          day1-2:
+            - config-access:
+                ssh-access:
+                  default-user: ubuntu
+                  required: true
+              id: default_vdu
+              execution-environment-list:
+                - id: env
+                  juju:
+                    charm: native-charm
+                    proxy: false
+  ext-cpd:
+    - id: vnf-mgmt-ext
+      int-cpd:
+        cpd: eth0-int
+        vdu-id: default_vdu
+    - id: vnf-data-ext
+      int-cpd:
+        cpd: eth1-int
+        vdu-id: default_vdu
+  id: simple_native_charm_vnfd
+  mgmt-cp: vnf-mgmt-ext
+  product-name: simple_native_charm_vnfd
+  sw-image-desc:
+    - id: Ubuntu18
+      image: Ubuntu18
+      name: Ubuntu18
+  vdu:
+    - cloud-init-file: cloud-config
+      description: default_vdu
+      id: default_vdu
+      int-cpd:
+        - id: eth0-int
+          virtual-network-interface-requirement:
+            - name: eth0
+              virtual-interface:
+                type: PARAVIRT
+        - id: eth1-int
+          virtual-network-interface-requirement:
+            - name: eth1
+              virtual-interface:
+                type: PARAVIRT
+      name: default_vdu
+      supplemental-boot-data:
+        boot-data-drive: true
+      sw-image-desc: Ubuntu18
+      virtual-compute-desc: default_vdu-compute
+      virtual-storage-desc:
+        - default_vdu-storage
+  version: '1.0'
+  virtual-compute-desc:
+    - id: default_vdu-compute
+      virtual-cpu:
+        num-virtual-cpu: 1
+      virtual-memory:
+        size: 2
+  virtual-storage-desc:
+    - id: default_vdu-storage
+      size-of-storage: 20

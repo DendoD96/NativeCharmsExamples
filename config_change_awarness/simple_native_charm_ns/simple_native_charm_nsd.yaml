@@ -1,0 +1,29 @@
+nsd:
+    nsd:
+    -   description: A NS composed by a single VNF
+        designer: Daniele Rossi
+        df:
+        -   id: default-df
+            vnf-profile:
+            -   id: '1'
+                virtual-link-connectivity:
+                -   constituent-cpd-id:
+                    -   constituent-base-element-id: '1'
+                        constituent-cpd-id: vnf-mgmt-ext
+                    virtual-link-profile-id: mgmt_net
+                -   constituent-cpd-id:
+                    -   constituent-base-element-id: '1'
+                        constituent-cpd-id: vnf-data-ext
+                    virtual-link-profile-id: external_net
+                vnfd-id: simple_native_charm_vnfd
+        id: simple_native_charm_nsd
+        name: simple_native_charm_nsd
+        version: '1.0'
+        virtual-link-desc:
+        -   id: mgmt_net
+            mgmt-network: 'true'
+            vim-network-name: mgmtNet
+        -   id: external_net
+            vim-network-name: external
+        vnfd-id:
+        - simple_native_charm_vnfd
