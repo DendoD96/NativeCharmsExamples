@@ -1,4 +1,4 @@
-from typing import List, NoReturn
+from typing import List
 
 import apt
 import subprocess
